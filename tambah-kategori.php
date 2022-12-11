@@ -24,11 +24,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -37,7 +37,7 @@
 	<!-- content -->
 	<div class="section">
 		<div class="container">
-			<h3>Tambah Data Kategori</h3>
+			<h3>Add Kategori</h3>
 			<div class="box">				
 				<form action="" method="POST">
 					<input type="text" name="nama" placeholder="Nama Kategori" class="input-control" required>
@@ -64,10 +64,6 @@
 		</div>
 	</div>
 
-	<!-- footer -->
-	<footer>
-		<div class="container">
-			<small>Copyright &copy; 2022 - Creativo.</small>
-	</footer>
+	
 </body>
 </html>
