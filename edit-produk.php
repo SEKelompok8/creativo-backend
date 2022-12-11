@@ -31,11 +31,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -91,7 +91,7 @@
 
 						
 
-						// validasi, jika admin ganti gambar
+						// validasi, kalo admin ganti gambar
 						if($filename != ''){
 
 							$type1 = explode('.', $filename);
@@ -99,14 +99,14 @@
 
 							$newname = 'produk'.time().'.'.$type2;
 
-							// menampung data format file yang diizinkan
+							// ini buat security file upoad tipe file nya
 
 							$tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
 
-							//validasi format file
+							//buat validasi lagi format file nya
 							if(!in_array($type2, $tipe_diizinkan)) {
 
-								// jika format file tidak ada di dalam tipe diizinkan
+								// kalo format file tidak ada di dalam tipe diizinkan
 								echo '<script>alert("Format file tidak diizinkan")</script>';
 
 							}else{
@@ -117,29 +117,28 @@
 							}
 								
 						}else{
-							// jika admin tidak ganti gambar, apa yg dilakukan?
+							
 							$namagambar = $foto;
 
 
 						}
 
-						// query update data produk 
+						
 						$update = mysqli_query($conn, "UPDATE tb_product SET
-												category_id = '".$kategori."',
-												product_name = '".$nama."',
-												product_price = '".$harga."',
-												product_description = '".$deskripsi."',
-												product_image = '".$namagambar."',  
-												product_status = '".$status."'
-												WHERE product_id = '".$p->product_id."' ");
+							category_id = '".$kategori."',
+							product_name = '".$nama."',
+							product_price = '".$harga."',
+							product_description = '".$deskripsi."',
+							product_image = '".$namagambar."',  
+							product_status = '".$status."'
+							WHERE product_id = '".$p->product_id."' ");
 
 						if($update){
-
-								echo '<script>alert("Ubah data berhasil")</script>';
-								echo '<script>window.location="data-produk.php"</script>';
-							}else {
-								echo 'gagal' .mysql_error($conn);							
-							 }
+							echo '<script>alert("Alert! Update data success")</script>';
+							echo '<script>window.location="data-produk.php"</script>';
+						}else {
+							echo 'gagal' .mysql_error($conn);							
+						}
 
 						
 					}
