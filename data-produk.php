@@ -23,11 +23,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -38,7 +38,7 @@
 		<div class="container">
 			<h3>Data Produk</h3>
 			<div class="box">
-				<p><a href="tambah-produk.php">Tambah Data</a></p>
+				<p><a href="tambah-produk.php">Add Data</a></p>
 				<table border="1" cellspacing="0" class="table">
 					<thead>
 						
@@ -69,13 +69,14 @@
 							<td><a href="produk/<?php echo $row['product_image'] ?>" target="_blank">><img src="produk/<?php echo $row['product_image'] ?>" width="50px"> </a></td>
 							<td><?php echo ($row['product_status'] == 0)? 'Tidak Aktif':'Aktif'; ?></td>
 							<td>
-								<a href="edit-produk.php?id=<?php echo $row['product_id'] ?>">Edit</a> || <a href="proses-hapus.php?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a>
+								<a href="edit-produk.php?id=<?php echo $row['product_id'] ?>">Edit</a> || 
+								<a href="proses-hapus.php?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('DELETE ?')">DELETE</a>
 							</td>
 						</tr>
 						<?php }}else{ ?>
 
 							<tr>
-								<td colspan="7">Tidak ada data</td>
+								<td colspan="7">NOT FOUND</td>
 							</tr>
 
 							<?php } ?>
