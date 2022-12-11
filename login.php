@@ -32,7 +32,7 @@
 					$_SESSION['id'] = $d->admin_id;
 					echo '<script>window.location="dashboard.php"</script>';
 				}else{
-					echo '<script>alert("username atau password Anda salah!")</script';
+					echo '<script>alert("Alert ! username/pass ada yg salah ")</script';
 				}
 
 
