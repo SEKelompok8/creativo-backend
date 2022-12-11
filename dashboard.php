@@ -40,10 +40,6 @@
 		</div>
 	</div>
 
-	<!-- foater -->
-	<footer>
-		<div class="container">
-			<small>Copyright &copy; 2022 - Creativo.</small>
-	</footer>
+	
 </body>
 </html>
