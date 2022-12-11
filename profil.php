@@ -25,11 +25,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -38,7 +38,7 @@
 	<!-- content -->
 	<div class="section">
 		<div class="container">
-			<h3>Identitas</h3>
+			<h3>Input Data</h3>
 			<div class="box">
 				<form action="" method="POST">
 					<input type="text" name="nama" placeholder="Nama Lengkap" class="input-control" value="<?php echo $d->admin_name ?>" required>
@@ -46,7 +46,7 @@
 					<input type="text" name="hp" placeholder="No Hp" class="input-control" value="<?php echo $d->admin_telp ?>" required>
 					<input type="email" name="email" placeholder="Email" class="input-control" value="<?php echo $d->admin_email ?>" required>
 					<input type="text" name="alamat" placeholder="Alamat" class="input-control" value="<?php echo $d->admin_address ?>" required>
-					<input type="submit" name="submit" value="Ubah Profil" class="btn">
+					<input type="submit" name="submit" value="Update Data" class="btn">
 				</form>
 				<?php
 					if(isset($_POST['submit'])){
@@ -65,7 +65,7 @@
 										admin_address 	= '".$alamat."'
 										WHERE admin_id 	= '".$d->admin_id."' ");
 						if($update){
-							echo '<script>alert("Ubah data berhasil")</script>';
+							echo '<script>alert("Alert! Update data succses")</script>';
 							echo '<script>window.location="profil.php"</script>';
 						}else{
 							echo 'gagal' .mysql_error($conn);
@@ -93,7 +93,7 @@
 						$pass2 	= $_POST['pass2'];
 
 						if($pass2 != $pass2){
-							echo '<script>alert("Konfirmasi Password Baru tidak sesuai")</script>';
+							echo '<script>alert("Password ga sama")</script>';
 
 						}else{
 							//masih ada yg error dibagian alert konfirmasi password tidak sesuai masih belom work
@@ -102,7 +102,7 @@
 										password 	= '".MD5($pass1)."'
 										WHERE admin_id 	= '".$d->admin_id."' ");
 							if($u_pass){
-								echo '<script>alert("Ubah data berhasil")</script>';
+								echo '<script>alert("Alert! Update data succses")</script>';
 								echo '<script>window.location="profil.php"</script>';
 							}else{
 								echo 'gagal' .mysql_error($conn);
