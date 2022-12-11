@@ -25,11 +25,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -38,7 +38,7 @@
 	<!-- content -->
 	<div class="section">
 		<div class="container">
-			<h3>Tambah Data Produk</h3>
+			<h3>Add Data</h3>
 			<div class="box">				
 				<form action="" method="POST" enctype="multipart/form-data">
 					<select class="input-control" name="kategori" required>
@@ -58,8 +58,8 @@
 					<textarea class="input-control" name="deskripsi" placeholder="Deskripsi"></textarea><br>
 					<select class="input-control" name="status">
 						<option value="">--Pilih--</option>
-						<option value="1">Aktif</option> 
-						<option value="0">Tidak Aktif</option> 
+						<option value="1">True</option> 
+						<option value="0">False</option> 
 					</select>
 					<input type="submit" name="submit" value="Submit" class="btn">
 				</form>
@@ -86,17 +86,16 @@
 
 						echo $type2;
 
-						// menampung data format file yang diizinkan
+						
 
 						$tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
 
-						// validasi format file
+						
 						if(!in_array($type2, $tipe_diizinkan)) {
-							// jika format file tidak ada di dalam tipe diizinkan
+							
 							echo '<script>alert("Format file tidak diizinkan")</script>';
 						}else{
-							// jika format file sesuai dengan yang ada di dalam array tipe diizinkan
-							// proses uplod file sekaligus insert ke databse
+							
 							move_uploaded_file($tmp_name, './produk/' .$newname);
 
 
@@ -127,11 +126,7 @@
 		</div>
 	</div>
 
-	<!-- footer -->
-	<footer>
-		<div class="container">
-			<small>Copyright &copy; 2022 - Creativo.</small>
-	</footer>
+	
 	<script>
           CKEDITOR.replace( 'deskripsi' );
     </script>
