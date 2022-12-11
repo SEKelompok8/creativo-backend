@@ -24,10 +24,7 @@
 				<ul>
 			
 					<li><a href="dashboard.php">Home</a></li>
-					<li><a href="profil.php">Identitas</a></li>
-					<li><a href="data-kategori.php">Kategori</a></li>
-					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Logout</a></li>
+					
 
 				</ul>
 		</div>
@@ -49,7 +46,7 @@
 							<th>Harga</th>
 							<th>Gambar</th>
 							<th>Status</th>
-							<th width="150px">Aksi</th>
+							<th width="150px">Keterangan</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -67,9 +64,9 @@
 							<td><?php echo $row['product_name'] ?></td>
 							<td>Rp. <?php echo number_format($row['product_price']) ?></td>
 							<td><a href="produk/<?php echo $row['product_image'] ?>" target="_blank">><img src="produk/<?php echo $row['product_image'] ?>" width="50px"> </a></td>
-							<td><?php echo ($row['product_status'] == 0)? 'Tidak Aktif':'Aktif'; ?></td>
+							<td><?php echo ($row['product_status'] == 0)? 'False':'True'; ?></td>
 							<td>
-								<a href="edit-produk.php?id=<?php echo $row['product_id'] ?>">Edit</a> || 
+								<a href="edit-produk.php?id=<?php echo $row['product_id'] ?>">Edit</a> atau 
 								<a href="proses-hapus.php?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('DELETE ?')">DELETE</a>
 							</td>
 						</tr>
