@@ -58,7 +58,7 @@
 							<td><?php echo $no++ ?></td>
 							<td><?php echo $row['category_name'] ?></td>
 							<td>
-								<a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>">Edit</a> || 
+								<a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>">Edit</a> atau 
 								<a href="proses-hapus.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('DELETE ?')">DELETE</a>
 							</td>
 						</tr>
