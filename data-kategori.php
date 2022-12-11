@@ -23,11 +23,11 @@
 			<h1><a href="dashboard.php">Creativo</a></h1>
 				<ul>
 			
-					<li><a href="dashboard.php">Dashboard</a></li>
-					<li><a href="profil.php">Profil</a></li>
-					<li><a href="data-kategori.php">Data Kategori</a></li>
+					<li><a href="dashboard.php">Home</a></li>
+					<li><a href="profil.php">Identitas</a></li>
+					<li><a href="data-kategori.php">Kategori</a></li>
 					<li><a href="data-produk.php">Data Produk</a></li>
-					<li><a href="keluar.php">Keluar</a></li>
+					<li><a href="keluar.php">Logout</a></li>
 
 				</ul>
 		</div>
@@ -36,9 +36,9 @@
 	<!-- content -->
 	<div class="section">
 		<div class="container">
-			<h3>Data Kategori</h3>
+			<h3>Kategori</h3>
 			<div class="box">
-				<p><a href="tambah-kategori.php">Tambah Data</a></p>
+				<p><a href="tambah-kategori.php">Add kategori</a></p>
 				<table border="1" cellspacing="0" class="table">
 					<thead>
 						
@@ -61,12 +61,13 @@
 							<td><?php echo $no++ ?></td>
 							<td><?php echo $row['category_name'] ?></td>
 							<td>
-								<a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>">Edit</a> || <a href="proses-hapus.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a>
+								<a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>">Edit</a> || 
+								<a href="proses-hapus.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('DELETE ?')">DELETE</a>
 							</td>
 						</tr>
 						<?php }}else{ ?>
 							<tr>
-								<td colspan="3">Tiidak ada data</td>
+								<td colspan="3">Not Found</td>
 							</tr>
 
 						<?php } ?>
